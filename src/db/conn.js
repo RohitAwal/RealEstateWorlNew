@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/youtubeRegistrationss", {
+mongoose.connect("mongodb://localhost:27017/RealEstateWorld", {
     useCreateIndex:true,
     useNewUrlParser:true,
     useUnifiedTopology:true,

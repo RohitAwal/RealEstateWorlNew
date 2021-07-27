@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% userList.forEach(user => {%>
+                <tr>
+                    <th scope="row"><%= user._id %></th>
+                    <td><%= user.firstname %></td>
+                    <td><%= user.lastname %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.age %></td>
+                    
+                  </tr>
+        
+                <%})%>
+          
+          
+        </tbody>
+      </table>
+
+
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Message</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%contactList.forEach(contact => {%>
+                <tr>
+                    <th scope="row"><%= contact._id %></th>
+                    <td><%= contact.firstname %></td>
+                    <td><%= contact.lastname %></td>
+                    <td><%= contact.message %></td>
+                    <td>
+                        
+                        <% if(contact.image) { %>
+                        <img src="../uploads/<%= contact.image %>" alt="photo" >
+                        <% } %>
+                        </td>
+                  </tr>
+        
+                <%})%>
+          
+          
+        </tbody>
+      </table>
+</body>
+</html>

@@ -40,7 +40,11 @@ const employeeSchema =new mongoose.Schema({
     confirmpassword: {
         type:String,
         required:true
-    },
+    }, 
+    // Image: {
+    //     type:String,
+        
+    // }, 
     tokens:[{
         token:{
             type:String,

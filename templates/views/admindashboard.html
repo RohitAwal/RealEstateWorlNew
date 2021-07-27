@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    
+
+  </title>
+  <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/image.css"
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>srtdash - ICO Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/css/metisMenu.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/slicknav.min.css">
+  <!-- amchart css -->
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <!-- others css -->
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/default-css.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+  
+  <!-- <link rel="stylesheet" href="uploadimage/style.css"> -->
+  <!-- modernizr css -->
+  <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- preloader area end -->
+<!-- page container area start -->
+
+    <!-- sidebar menu area end -->
+    <!-- main content area start -->
+     
+        <div class="page-title-area">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Dashboard</h4>
+                        <ul class="breadcrumbs pull-left">
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 clearfix">
+                    <div class="user-profile pull-right">
+                        <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                        <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Royal Travel Admin <i class="fa fa-angle-down"></i></h4>
+                        <div class="dropdown-menu">
+                           
+                            <li class="dropdown-item" onclick="logout('token')"><a href = "index.html">Log Out</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- <div class="page-title-area">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="breadcrumbs-area clearfix">
+                    <h4 class="page-title pull-left">Dashboard</h4>
+                    <ul class="breadcrumbs pull-left">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>Dashboard</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 clearfix">
+                <div class="user-profile pull-right">
+                    <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                    <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Royal Travel  <i class="fa fa-angle-down"></i></h4>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Message</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="index.html">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- page title area end -->
+       
+    
+
+  <h1> User Profile</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Phoneno</th>
+      <th scope="col">Username</th>
+      <th scope="col">address</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete </th>
+    </tr>
+  </thead>
+  <tbody id="userslist">
+    <tr>
+      
+    
+      
+    </tr>
+   
+  </tbody>
+</table>
+
+
+
+
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form  class="form-horizontal" id="editUserr" action="/test" method= "POST"  enctype="multipart/form-data">
+<fieldset>
+
+<legend>User Info</legend>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Firstname</label>  
+  <div class="col-md-4">
+  <input id="Firstname" name="Firstname" type="text" placeholder="Firstname" class="form-control input-md">
+ 
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Lastname</label>  
+  <div class="col-md-4">
+  <input id="Lastname" name="Lastname" type="text" placeholder="Lastname" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Phoneno</label>  
+  <div class="col-md-4">
+  <input id="Phoneno" name="Phoneno" type="text" placeholder="Phoneno" class="form-control input-md">
+    
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Email</label>  
+  <div class="col-md-4">
+  <input id="username" name="username" type="text" placeholder="username" class="form-control input-md">
+ 
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Address</label>  
+  <div class="col-md-4">
+  <input id="address" name="address" type="text" placeholder="address" class="form-control input-md">
+   
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">submit</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit"  class="btn btn-info">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ -->        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal2 -->
+<div class="modal fade" id="exampleModals" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form  class="form-horizontal" id="Contactt"  method= "POST"  enctype="multipart/form-data">
+<fieldset>
+
+<legend>Suggestion Info</legend>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Name</label>  
+  <div class="col-md-4">
+  <input id="Name" name="Name" type="text" placeholder="Name" class="form-control input-md">
+  
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="email" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Phoneno</label>  
+  <div class="col-md-4">
+  <input id="Phoneno" name="Phoneno" type="text" placeholder="Phoneno" class="form-control input-md">
+  
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Message</label>  
+  <div class="col-md-4">
+  <input id="Message" name="Message" type="text" placeholder="Message" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">submit</label>
+  <div class="col-md-4">
+    <button id="Contactt" name="submit"  class="btn btn-info">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ -->        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal3 -->
+<div class="modal fade" id="exampleModals1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form  class="form-horizontal" id="reservet"  method= "POST"  enctype="multipart/form-data">
+<fieldset>
+
+<legend>Booking Info</legend>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Fullname</label>  
+  <div class="col-md-4">
+  <input id="fullname" name="fullname" type="text" placeholder="fullname" class="form-control input-md">
+  
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="email" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Phoneno</label>  
+  <div class="col-md-4">
+  <input id="phoneno" name="phoneno" type="text" placeholder="phoneno" class="form-control input-md">
+  
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Address</label>  
+  <div class="col-md-4">
+  <input id="address" name="address" type="text" placeholder="address" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Departure</label>  
+  <div class="col-md-4">
+  <input id="departure" name="departure" type="text" placeholder="departure" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Destination</label>  
+  <div class="col-md-4">
+  <input id="destination" name="destination" type="text" placeholder="destination" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">People</label>  
+  <div class="col-md-4">
+  <input id="people" name="people" type="text" placeholder="people" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">submit</label>
+  <div class="col-md-4">
+    <button id="reservet" name="submit"  class="btn btn-info">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+ -->        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="market-status-table mt-4">
+    <div class="table-responsive">
+        <table class="dbkit-table">
+            <tr class="heading-td">
+                <td class="mv-icon">id</td>
+                <td class="coin-name">Name</td>
+                <td class="buy">email</td>
+                <td class="sell">Phone</td>
+                <td class="trends">Message</td>
+                <td class="attachments">Edit </td>
+                <td class="stats-chart">Delete</td>
+            </tr>
+         
+    <td class="mv-icon" id="contactlist">
+
+    <tr></tr>
+      
+      <td>Mark</td>
+      <td>oota</td>
+      <td>gotta</td>
+      <td>tota</td>
+      
+      <td><button type="button" id ="edit" class="btn btn-primary">Edit</button></td>
+       <td><button type="button" class="btn btn-danger">Delete</button></td>
+    </td>
+
+  </tr>
+
+    </table>
+    </div>
+</div> -->
+   
+
+
+
+
+ 
+
+
+<h1> Suggestion</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">email</th>
+      <th scope="col">Phoneno</th>
+      <th scope="col">Message</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete </th>
+    </tr>
+  </thead>
+  <tbody id="contactlist">
+    <tr>
+      
+    </tr>
+   
+  </tbody>
+</table> 
+
+
+  
+
+
+<h1> Reservation</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Fullname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phoneno</th>
+      <th scope="col">Adddress</th>
+      <th scope="col">Departure</th>
+      <th scope="col">Destination</th>
+      <th scope="col">No of People</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete </th>
+    </tr>
+  </thead>
+  <tbody id="reservelist">
+    <tr>
+      
+      
+      
+    </tr>
+   
+  </tbody>
+</table>
+
+<h1>Upload Images</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name of the place</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+
+        
+      <!-- <th scope="col">Delete </th>
+      -->
+      </tr>
+    </thead>
+    <tbody id="editBook">
+      <tr>
+       
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+
+     
+        <form id="addPic" class="form-detail" method="POST" enctype="multipart/form-data">
+
+        <div class="Div1">
+            
+
+          <div class="div2">
+                  <h2>Upload Image</h2>
+                  <div class="name">
+                      <label for="image" > Image </label>
+                      <input type="file" name="images" id="locationphoto" required="required">
+                    </div>
+                          
+                <div class="name">
+                    
+                    <input  type="text" id="NameOfPlace" name="Name"
+                        placeholder="Name" required>
+                </div>
+                        
+                <div class="name">
+                    
+                    <input  type="text" placeholder="Price" id="Price"
+                        name="Price" required>
+                </div>
+  
+                <div class="name" >
+                    
+                    <input  type="text" placeholder="Description" id="Description" name="Description"
+                        required>
+                </div>
+
+                <div  >
+                    <input type="submit" name="register" class="register" value="Submit">
+                  </div>
+            
+            
+                </div>
+        </div>
+      </form>
+
+     
+      <footer>
+        <section class="footer footer_1its py-5">
+            <div class="container py-md-4">
+                <div class="row footer-top mb-md-5 mb-4">
+                    <div class="col-lg-4 col-md-6 footer-grid_section_1its">
+                        <div class="footer-title-w3ls">
+                            <h3>Address</h3>
+                        </div>
+                        <div class="footer-text">
+                            <p>Address : New Baneswor, Kathmandu, Nepal</p>
+                            <p>Phone : +977 4241414</p>
+                            <p>Email : <a href="mailto:info@example.com">visitnepal2020@gmail.com</a></p>
+                            <p>Fax : +12 534894364</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
+                        <div class="footer-title-w3ls">
+                            <h3>Catch On</h3>
+                        </div>
+                        
+                        <ul class="social_section_1info">
+                        <li class="mb-2 facebook"><a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a></li>
+                        <li class="mb-2 twitter"><a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a></li>
+                        <li class="google"><a href="#"><span class="fa fa-google-plus mr-1"></span>google</a></li>
+                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin mr-1"></span>linkedin</a></li>
+                    </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mt-lg-0 mt-4 col-sm-12 footer-grid_section_1its">
+                        <div class="footer-title-w3ls">
+                            <h3>Newsletter</h3>
+                        </div>
+                        <div class="footer-text">
+                            <p>By subscribing to our mailing list you will always get new travel destination.</p>
+                            <form action="#" method="post">
+                                <input type="email" name="Email" placeholder="Enter your email..." required="">
+                                <button class="btn1 btn"><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
+                                <div class="clearfix"> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="move-top-w3layouts text-center mt-3">
+                    <a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a>
+                </div>
+
+            </div>
+        </section>
+    </footer>
+    <!-- //footer -->
+
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p class="">© 2019 All rights reserved 
+            
+        </p>
+    </div>
+        
+
+       
+
+        
+
+
+
+
+     
+
+
+     
+
+
+
+
+    
+
+
+
+
+
+
+      
+      
+
+
+</body>
+
+<script type="text/javascript" src="resources/js/jquery-3.3.0.min.js"></script>
+<script type="text/javascript" src="resources/js/custom.js"></script>
+<!-- <script type="text/javascript" src="resources/js/dashboard.js"></script> -->
+
+<script type="text/javascript" src="resources/js/admindashboard.js">
+	
+</script>
+<script type="text/javascript" src="resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="resources/js/booking.js"></script>
+<script type="text/javascript" src="resources/js/contact.js"></script>
+<script type="text/javascript" src="resources/js/reserve.js"></script>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="assets/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="assets/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+<!-- <script  src="uploadimage/script.js"></script> -->
+
+
+
+
+
+</html>
